@@ -1,45 +1,37 @@
 using Profile;
-using Profile.Analytic;
-using Services.Ads.UnityAds;
-using Services.Analytics;
 using UnityEngine;
 
-namespace Robots
+internal class EntryPoint : MonoBehaviour
 {
-    public class EntryPoint : MonoBehaviour
+    [Header("Initial Settings")]
+    [SerializeField] private ConfigurationProfilePlayer _configurationProfilePlayer;
+
+    [Header("Scene Objects")]
+    [SerializeField] private Transform _placeForUi;
+
+    private MainController _mainController;
+
+
+    private void Awake()
     {
-        [SerializeField] private float _speedRobot = 5;
-        [SerializeField] private GameState _initialState = GameState.Start;
-        [SerializeField] private UnityAdsService _adsService;
-        [SerializeField] private AnalyticsManager  _analyticsManager;
-
-        [Header("Scene Objects")]
-        [SerializeField] private Transform _placeForUi;
-
-        [SerializeField] private MainController _mainController;
-
-        void Awake()
-        {
-            _analyticsManager ??= GameObject.FindObjectOfType<AnalyticsManager>();
-            var profilePlayer = new ProfilePlayer(_speedRobot, _initialState, _analyticsManager);
-           
-            _mainController = new MainController(_placeForUi, profilePlayer);
-
-            _adsService ??= GameObject.FindObjectOfType <UnityAdsService>();
-
-            if (_adsService.IsInitialized) OnAdsInitialised();
-            else _adsService.Initialized.AddListener(OnAdsInitialised);
-        }
-
-        private void OnAdsInitialised()
-        {
-            _adsService.InterstitialPlayer.Play();
-        }
-
-        private void OnDestroy()
-        {
-            _adsService.Initialized.RemoveListener(OnAdsInitialised);
-            _mainController.Dispose();
-        }
+        var profilePlayer = CreateProfilePlayer(_configurationProfilePlayer);
+        _mainController = new MainController(_placeForUi, profilePlayer);
     }
+
+    private void OnDestroy()
+    {
+        _mainController.Dispose();
+    }
+
+
+    private ProfilePlayer CreateProfilePlayer(ConfigurationProfilePlayer configurationProfilePlayer) =>
+        new ProfilePlayer
+        (
+            
+            configurationProfilePlayer.Robot.Speed,
+            configurationProfilePlayer.Robot.JumpHeight,
+            configurationProfilePlayer.Robot.Type,
+            configurationProfilePlayer.Robot.Armory,
+            configurationProfilePlayer.State
+        );
 }

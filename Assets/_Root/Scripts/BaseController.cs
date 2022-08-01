@@ -6,9 +6,8 @@ using Object = UnityEngine.Object;
 
 internal abstract class BaseController : IDisposable
 {
-    private List<BaseController> _baseControllers;
+    private List<IDisposable> _disposables;
     private List<GameObject> _gameObjects;
-    private List<IRepository> _repositores;
     private bool _isDisposed;
 
 
@@ -19,22 +18,21 @@ internal abstract class BaseController : IDisposable
 
         _isDisposed = true;
 
-        DisposeBaseControllers();
+        DisposeDisposables();
         DisposeGameObjects();
-        DisposeBaseRepositories();
 
         OnDispose();
     }
 
-    private void DisposeBaseControllers()
+    private void DisposeDisposables()
     {
-        if (_baseControllers == null)
+        if (_disposables == null)
             return;
 
-        foreach (BaseController baseController in _baseControllers)
-            baseController.Dispose();
+        foreach (IDisposable disposable in _disposables)
+            disposable.Dispose();
 
-        _baseControllers.Clear();
+        _disposables.Clear();
     }
 
     private void DisposeGameObjects()
@@ -48,25 +46,7 @@ internal abstract class BaseController : IDisposable
         _gameObjects.Clear();
     }
 
-    private void DisposeBaseRepositories()
-    {
-        if (_repositores == null)
-            return;
-
-        foreach (IRepository repositores in _repositores)
-            repositores.Dispose();
-
-        _repositores.Clear();
-    }
-
     protected virtual void OnDispose() { }
-
-
-    protected void AddController(BaseController baseController)
-    {
-        _baseControllers ??= new List<BaseController>();
-        _baseControllers.Add(baseController);
-    }
 
     protected void AddGameObject(GameObject gameObject)
     {
@@ -74,9 +54,14 @@ internal abstract class BaseController : IDisposable
         _gameObjects.Add(gameObject);
     }
 
-    protected void AddRepository(IRepository repository)
+    protected void AddController(BaseController baseController) => AddDispoable(baseController);
+
+
+    protected void AddRepository(IRepository  repository) => AddDispoable(repository);
+
+    protected void AddDispoable(IDisposable disposable)
     {
-        _repositores ??= new List<IRepository>();
-        _repositores.Add(repository);
+        _disposables ??= new List<IDisposable>();
+        _disposables.Add(disposable);
     }
 }

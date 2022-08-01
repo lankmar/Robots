@@ -31,13 +31,13 @@ namespace Ui
 
             var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             AddController(tapeBackgroundController);
-            var inputMainMenuController = new InputMainMenuController(leftMoveDiff, rightMoveDiff, upMoveDiff, downMoveDiff, profilePlayer.currentRobot.Speed);
+            var inputMainMenuController = new InputMainMenuController(leftMoveDiff, rightMoveDiff, upMoveDiff, downMoveDiff);
             AddController(inputMainMenuController);
         }
 
         protected override void OnDispose()
         {
-            UnsubscribeAds();
+            //UnsubscribeAds();
             UnsubscribeIAP();
         }
 

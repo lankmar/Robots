@@ -7,14 +7,7 @@ namespace Game.InputLogic
     {
         [SerializeField] private float _inputMultiplier = 0.05f;
 
-        private void Start() =>
-            UpdateManager.SubscribeToUpdate(Move);
-
-        private void OnDestroy() =>
-            UpdateManager.UnsubscribeFromUpdate(Move);
-
-
-        private void Move()
+        protected override void Move()
         {
             Vector3 direction = CalcDirection();
             

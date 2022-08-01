@@ -37,7 +37,6 @@ namespace Game.Robot
         private void MoveLeft(float value)
         {
             _diff.Value = -value;
-            Debug.Log("_diff.Value  - " + _diff.Value);
         }
          //private void MoveLeft(float value) =>
          //   _diff.Value = -value;
