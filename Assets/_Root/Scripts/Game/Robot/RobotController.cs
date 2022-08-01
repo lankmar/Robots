@@ -1,15 +1,18 @@
+using Features.AbilitySystem;
 using Tool;
 using UnityEngine;
 
 namespace Game.Robot
 {
-    internal class RobotController : BaseController
+    internal class RobotController : BaseController, IAbilityActivator
     {
 
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Robot");
         private readonly RobotView _view;
 
         public GameObject ViewGameObject => _view.gameObject;
+
+        public float JumpHeight => throw new System.NotImplementedException();
 
         public RobotController(SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove)

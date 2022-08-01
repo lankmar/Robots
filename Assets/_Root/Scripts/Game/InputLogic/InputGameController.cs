@@ -7,7 +7,8 @@ namespace Game.InputLogic
     internal class InputGameController : BaseController
     {
         //private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/MobileSingleStickControl");
-        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/KeyboardMove");
+        //private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/KeyboardMove");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/InputScreenButton");
         private BaseInputView _view;
 
 
@@ -16,16 +17,16 @@ namespace Game.InputLogic
             SubscriptionProperty<float> rightMove,
             SubscriptionProperty<float> upMove,
             SubscriptionProperty<float> downtMove,
-            float speed)
+            Transform placeForUi)
         {
-            _view = LoadView();
-            _view.Init(leftMove, rightMove, upMove, downtMove, speed);
+            _view = LoadView(placeForUi);
+            _view.Init(leftMove, rightMove, upMove, downtMove);
         }
 
-        private BaseInputView LoadView()
+        private BaseInputView LoadView(Transform placeForUi)
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_resourcePath);
-            GameObject objectView = Object.Instantiate(prefab);
+            GameObject objectView = Object.Instantiate(prefab, placeForUi, false);
             AddGameObject(objectView);
 
             BaseInputView view = objectView.GetComponent<BaseInputView>();

@@ -10,7 +10,6 @@ namespace Ui
     internal class SettingsMenuController : BaseController
     {
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/SettingsMenu");
-        private readonly ResourcePath _inputResourcePath = new ResourcePath("Prefabs/EndlessMove");
         private readonly ProfilePlayer _profilePlayer;
         private readonly SettihgsMenuView _view;
 
@@ -28,7 +27,7 @@ namespace Ui
 
             var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             AddController(tapeBackgroundController);
-            var inputMainMenuController = new InputMainMenuController(leftMoveDiff, rightMoveDiff, upMoveDiff, downMoveDiff, profilePlayer.currentRobot.Speed);
+            var inputMainMenuController = new InputMainMenuController(leftMoveDiff, rightMoveDiff, upMoveDiff, downMoveDiff);
             AddController(inputMainMenuController);
         }
 

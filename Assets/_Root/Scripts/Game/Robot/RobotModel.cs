@@ -3,30 +3,6 @@ using Features.Factory.Upgrade;
 
 namespace Game.Robot
 {
-    //internal class RobotModel 
-    //{
-    //    private readonly float _defaultSpeed = 10;
-
-    //    public readonly RobotType Type;
-
-    //    public float Speed { get; set; }
-
-
-    //    public RobotModel(float speed, RobotType type)
-    //    {
-    //        _defaultSpeed = speed;
-    //        Speed = speed;
-    //        Type = type;
-    //    }
-
-    //    public RobotModel(float speed)
-    //    {
-    //        _defaultSpeed = speed;
-    //    }
-
-    //    public void Restore() =>
-    //        Speed = _defaultSpeed;
-    //}
 
     internal class RobotModel : IUpgradable
     {
@@ -41,7 +17,7 @@ namespace Game.Robot
         public float Armory { get; set; }
 
 
-        public RobotModel(float speed, float jumpHeight, float armory, RobotType type)
+        public RobotModel(float speed, float jumpHeight, RobotType type, float armory)
         {
             _defaultSpeed = speed;
             _defaultJumpHeight = jumpHeight;

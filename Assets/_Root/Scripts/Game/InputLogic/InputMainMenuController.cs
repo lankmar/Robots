@@ -12,11 +12,10 @@ namespace Game.InputLogic
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove,
             SubscriptionProperty<float> upMove,
-            SubscriptionProperty<float> downtMove,
-            float speed)
+            SubscriptionProperty<float> downtMove)
         {
             _view = LoadView();
-            _view.Init(leftMove, rightMove, upMove, downtMove, speed);
+            _view.Init(leftMove, rightMove, upMove, downtMove);
         }
 
         private BaseInputView LoadView()

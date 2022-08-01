@@ -35,10 +35,7 @@ internal class MainController : BaseController
 
     private void OnChangeGameState(GameState state)
     {
-        _mainMenuController?.Dispose();
-        _gameController?.Dispose();
-        _settingsMenuController?.Dispose();
-        _factoryContainer?.Dispose();
+        DisposeSubControllers();
         switch (state)
         {
 
@@ -46,14 +43,22 @@ internal class MainController : BaseController
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer);
                 break;
             case GameState.Game:
-                _gameController = new GameController(_profilePlayer);
+                _gameController = new GameController( _placeForUi,_profilePlayer);
                 break;
             case GameState.Factory:
                 _factoryContainer = new FactoryMvcContainer(_profilePlayer, _placeForUi);
                 break;
             case GameState.Settings:
-                _settingsMenuController = new SettingsMenuController (_placeForUi, _profilePlayer);
+                _settingsMenuController = new SettingsMenuController(_placeForUi, _profilePlayer);
                 break;
         }
+    }
+
+    private void DisposeSubControllers()
+    {
+        _mainMenuController?.Dispose();
+        _gameController?.Dispose();
+        _settingsMenuController?.Dispose();
+        _factoryContainer?.Dispose();
     }
 }

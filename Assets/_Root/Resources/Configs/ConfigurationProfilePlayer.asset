@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c5268844ee48c295a90888e8404deb, type: 3}
-  m_Name: InitialProfilePlayer
+  m_Script: {fileID: 11500000, guid: 9e22bb92414cbec46acb9a763309be8f, type: 3}
+  m_Name: ConfigurationProfilePlayer
   m_EditorClassIdentifier: 
-  <State>k__BackingField: 1
-  <Transport>k__BackingField:
+  <State>k__BackingField: 0
+  <Robot>k__BackingField:
     <Type>k__BackingField: 0
-    <Speed>k__BackingField: 15
-    <JumpHeight>k__BackingField: 2
+    <Speed>k__BackingField: 0
+    <JumpHeight>k__BackingField: 0
+    <Armory>k__BackingField: 0

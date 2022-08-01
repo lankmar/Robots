@@ -11,8 +11,8 @@ namespace Ui
         [SerializeField] private Button _buttonExit;
 
 
-        public void Init(UnityAction exittGame) =>
-            _buttonExit.onClick.AddListener(exittGame);
+        public void Init(UnityAction exitGame) =>
+            _buttonExit.onClick.AddListener(exitGame);
 
         public void OnDestroy() =>
             _buttonExit.onClick.RemoveAllListeners();

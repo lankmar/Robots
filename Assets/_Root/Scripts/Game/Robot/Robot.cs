@@ -24,7 +24,6 @@ namespace Game.Robot
         public void Move(float value)
         {
             Vector3 position = transform.position;
-            Debug.Log("Move");
 
             position += Vector3.right * value * _relativeSpeedRate;
 
