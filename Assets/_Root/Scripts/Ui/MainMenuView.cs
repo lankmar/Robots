@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Tool.Tween;
 
 namespace Ui
 {
@@ -8,6 +9,12 @@ namespace Ui
     {
         [Header("Settings")]
         [SerializeField] private string _productId;
+
+
+        [Header("Popup")]
+        [SerializeField] private Button _buttonOpenPopup;
+        [SerializeField] private PopupView _popupView;
+
 
         [Header("Buttons")]
         [SerializeField] private Button _buttonStart;
@@ -25,6 +32,7 @@ namespace Ui
             _buttonFactory.onClick.AddListener(factory);
             _buttonAdsReward.onClick.AddListener(adsReward);
             _buttonBuyProduct.onClick.AddListener(() => buyProduct(_productId));
+            _buttonOpenPopup.onClick.AddListener(_popupView.ShowPopup);
         }
 
         public void OnDestroy()
@@ -34,6 +42,7 @@ namespace Ui
             _buttonFactory.onClick.RemoveAllListeners();
             _buttonAdsReward.onClick.RemoveAllListeners();
             _buttonBuyProduct.onClick.RemoveAllListeners();
+            _buttonOpenPopup.onClick.RemoveAllListeners();
         }
 
         public void Init(UnityAction startGame, UnityAction settings)
