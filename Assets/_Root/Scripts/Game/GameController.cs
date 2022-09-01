@@ -8,6 +8,8 @@ using Features.AbilitySystem;
 using Services;
 using Features.AbilitySystem.Abilities;
 using System.Collections.Generic;
+using System;
+using Ui;
 
 namespace Game
 {
@@ -26,6 +28,7 @@ namespace Game
         private readonly InputGameController _inputGameController;
         private readonly IAbilitiesController _abilitiesController;
         private readonly RobotController _robotController;
+        private readonly GameMenuController _gameMenuController;
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
         {
@@ -37,10 +40,18 @@ namespace Game
             _inputGameController = CreateInputGameController();
             _robotController = CreateRobotController(profilePlayer.currentRobot);
             _abilitiesController = CreateAbilitiesController(placeForUi);
+            _gameMenuController = CreateGameMenuController(placeForUi, profilePlayer);
 
             ServiceRoster.Analytics.SendGameStarted();
         }
 
+        private GameMenuController CreateGameMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+        {
+            var gameMenuController = new GameMenuController(placeForUi, profilePlayer);
+            AddController(gameMenuController);
+
+            return gameMenuController;
+        }
 
         private InputGameController CreateInputGameController()
         {
