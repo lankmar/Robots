@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b92ea065ef2b594bad70eaf085afb36, type: 3}
+  m_Name: NotificationSettings
+  m_EditorClassIdentifier: 
+  <Channels>k__BackingField:
+  - <Id>k__BackingField: notification_id
+    <Name>k__BackingField: Main Cannel
+    <Description>k__BackingField: it is the main cannel
+    _importance: 4
+  - <Id>k__BackingField: Happy_New_Year
+    <Name>k__BackingField: New Year
+    <Description>k__BackingField: 'Channel for Homework '
+    _importance: 2
+  <Notifications>k__BackingField:
+  - <Id>k__BackingField: notification_id
+    <Title>k__BackingField: Game Notification
+    <Text>k__BackingField: Hello
+    <RepeatType>k__BackingField: 1
+    <FireTime>k__BackingField:
+      <Year>k__BackingField: 2000
+      <Month>k__BackingField: 9
+      <Day>k__BackingField: 10
+      <Hour>k__BackingField: 10
+      <Minute>k__BackingField: 10
+    <RepeatInterval>k__BackingField:
+      <Seconds>k__BackingField: 300
+  - <Id>k__BackingField: Happy_New_Year
+    <Title>k__BackingField: Homework Notification
+    <Text>k__BackingField: Happy New Year
+    <RepeatType>k__BackingField: 0
+    <FireTime>k__BackingField:
+      <Year>k__BackingField: 2023
+      <Month>k__BackingField: 1
+      <Day>k__BackingField: 1
+      <Hour>k__BackingField: 0
+      <Minute>k__BackingField: 0
+    <RepeatInterval>k__BackingField:
+      <Seconds>k__BackingField: 300

@@ -12,16 +12,25 @@ EditorUserSettings:
       value: 5a00025356070a5f0856587140770c48404e48297d2c7f632f2f4c36e4b63169
       flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
-      flags: 0
-    RecentlyUsedSceneGuid-3:
       value: 51060c00040c5a080c5e582642215a4444151a79787f72362f2f4f31e0e5616a
       flags: 0
-    RecentlyUsedSceneGuid-4:
+    RecentlyUsedSceneGuid-3:
       value: 56500d0201015e0f08590a7a49770916414f1b7c7971726128714b64e0e16d3a
       flags: 0
-    RecentlyUsedSceneGuid-5:
+    RecentlyUsedSceneGuid-4:
       value: 0609045152040802080c5f7740215a4442151e727f7d71647e2b4861b4b36c6c
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 0104035e03545a5f55570d2344720a4441164d2c297d7e677c7b4d6bb3b9353e
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 55055153520c5c080b565e7212760e44124f497e292a7668797c4b64b0b2326a
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 5553525403015e595b0a0e72437b0844104e487e742d7636782b1e67b5b96c3d
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
       flags: 0
     UnityRemoteDevice:
       value: 2d5e5a03

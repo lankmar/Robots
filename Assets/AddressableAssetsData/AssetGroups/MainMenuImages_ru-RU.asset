@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: MainMenuImages_ru-RU
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: ru-RU
+  m_SharedData: {fileID: 11400000, guid: 8d2494609ea3a9d4bad06e4027bc8905, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 27315830784
+    m_Localized: 09ae04c7c0072cf499147bafa1109d72
+    m_Metadata:
+      m_Items: []
+  - m_Id: 352722518016
+    m_Localized: 74c01645d03bb3c48a43a8d2c4d51e3a
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
